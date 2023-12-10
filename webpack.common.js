@@ -65,7 +65,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".tsx", "ts", "js"],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     filename: "[name].js",
@@ -76,14 +76,3 @@ module.exports = {
     },
   },
 };
-
-function getHtmlPlugins(chunks) {
-  return chunks.map(
-    (chunk) =>
-      new HtmlPlugin({
-        title: "Auto Scorller Extension",
-        filename: `${chunk}.html`,
-        chunks: [chunk],
-      })
-  );
-}

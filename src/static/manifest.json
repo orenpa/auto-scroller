@@ -12,13 +12,13 @@
     "default_title": "Click Me",
     "default_popup": "popup.html"
   },
-  "permissions": ["tabs", "bookmarks"],
+  "permissions": ["tabs", "activeTab"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.google.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["contentScripts.js"]
     }
   ],
