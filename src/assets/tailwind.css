@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 body {
-  height: 400px;
-  width: 400px;
+  height: 100px;
+  width: 100px;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
 }

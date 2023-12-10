@@ -1,3 +1,1 @@
-window.onload = () => {
-  console.log("im from content scripts");
-};
+//implementation of the actual scrolling

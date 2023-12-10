@@ -1,15 +1,22 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "../assets/tailwind.css";
+import "../assets/popup.css";
+import { render } from "react-dom";
 
-const test = (
-  <div>
-    <h1 className="text-3xl text-green-500">Hello World</h1>
-    <img src="mayocaptainpoop.png" alt="" />
-  </div>
-);
-
-const container = document.createElement("div");
-document.body.appendChild(container);
+function Popup() {
+  return (
+    <div className="popup-container">
+      <button className="popup-button">+</button>
+      <button className="popup-button">-</button>
+      <button className="popup-button">activate</button>
+    </div>
+  );
+}
+const container = document.getElementById("popup-component"); // or the ID for your options container
 const root = createRoot(container);
-root.render(test);
+root.render(<Popup />);
+
+// const container = document.createElement("div");
+// document.body.appendChild(container);
+// const root = createRoot(container);
+// root.render(PopUp);

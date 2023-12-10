@@ -6,8 +6,6 @@ const autoprefixer = require("autoprefixer");
 const tailwindcss = require("tailwindcss");
 
 module.exports = {
-  mode: "development",
-  devtool: "cheap-module-source-map",
   entry: {
     popup: path.resolve("./src/popup/popup.tsx"),
     options: path.resolve("./src/options/options.tsx"),
@@ -53,7 +51,18 @@ module.exports = {
         },
       ],
     }),
-    ...getHtmlPlugins(["popup", "options"]),
+    new HtmlPlugin({
+      title: "Options Page",
+      template: "./src/templates/options-template.html", // Update this path as needed
+      filename: "options.html",
+      chunks: ["options"],
+    }),
+    new HtmlPlugin({
+      title: "Popup Page",
+      template: "./src/templates/popup-template.html",
+      filename: `popup.html`,
+      chunks: ["popup"],
+    }),
   ],
   resolve: {
     extensions: [".tsx", "ts", "js"],
